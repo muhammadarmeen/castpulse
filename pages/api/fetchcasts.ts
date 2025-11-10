@@ -1,8 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { calculateScore, getTitle, getMotivation } from "../../lib/scoreCalc";
-import { KV } from "@vercel/kv";
+import { kv } from "@vercel/kv";
 
-const kv = new KV();
+
+
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const FID = req.query.fid as string || "demo_user";
